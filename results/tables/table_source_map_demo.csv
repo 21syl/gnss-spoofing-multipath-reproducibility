@@ -1,0 +1,3 @@
+manuscript_item,source_file,generation_script,status
+Fig_1,REPLACE_WITH_SOURCE_DATA,scripts/generate_all_figures.py,DEMO_ONLY
+Table_1,REPLACE_WITH_SOURCE_DATA,scripts/generate_all_figures.py,DEMO_ONLY

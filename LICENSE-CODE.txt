@@ -1,0 +1,3 @@
+DEMO PLACEHOLDER
+
+Select and approve a software licence before releasing source code. Do not replace this file with an open licence until all code owners have confirmed that the repository may be distributed under that licence.

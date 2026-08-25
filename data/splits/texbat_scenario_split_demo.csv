@@ -1,0 +1,3 @@
+scenario_id,subset,evaluation_protocol,status
+ds2,train,DEMO_PROTOCOL,DEMO_ONLY
+ds7,test_unseen_scenario,DEMO_PROTOCOL,DEMO_ONLY
