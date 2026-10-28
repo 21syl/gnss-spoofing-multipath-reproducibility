@@ -1,0 +1,10 @@
+{
+  "output_dir": "data/processed/pairwise", "correlators": 11,
+  "note": "Set actual MAT filename, channel, duration and processed_start_original_s. A 100 s original event occurs at 100 - processed_start_original_s seconds in the retained receiver output. Null values deliberately fail validation.",
+  "records": [
+    {"id": "bs1", "mat_file": null, "system": "beib1", "channel": null, "processed_start_original_s": null, "duration_s": null, "multipath_entry_original_s": null, "spoofing_entry_original_s": 100, "time_reference": "original_generated_signal"},
+    {"id": "bs2", "mat_file": null, "system": "beib1", "channel": null, "processed_start_original_s": null, "duration_s": null, "multipath_entry_original_s": null, "spoofing_entry_original_s": 100, "time_reference": "original_generated_signal"},
+    {"id": "bs3", "mat_file": null, "system": "beib1", "channel": null, "processed_start_original_s": null, "duration_s": null, "multipath_entry_original_s": 100, "spoofing_entry_original_s": null, "time_reference": "original_generated_signal"},
+    {"id": "bs4", "mat_file": null, "system": "beib1", "channel": null, "processed_start_original_s": null, "duration_s": null, "multipath_entry_original_s": 100, "spoofing_entry_original_s": null, "time_reference": "original_generated_signal"}
+  ]
+}

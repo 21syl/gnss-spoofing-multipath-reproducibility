@@ -1,3 +1,4 @@
-DEMO PLACEHOLDER
-
-Select and approve a software licence before releasing source code. Do not replace this file with an open licence until all code owners have confirmed that the repository may be distributed under that licence.
+Copyright remains with the respective code owners.
+No open-source licence is granted by this release. Public availability of source
+does not itself grant permission for redistribution or derivative use.
+Contact the repository owner for permission beyond rights otherwise applicable.

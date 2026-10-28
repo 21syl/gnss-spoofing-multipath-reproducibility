@@ -1,0 +1,9 @@
+{
+  "experiment": "texbat_within_ds2", "protocol": "within_chronological",
+  "source_records": ["ds2"], "target_records": [],
+  "correlators": 11, "classes": 2, "split_ratios": [0.6, 0.2, 0.2],
+  "normalization": "train_zscore_per_correlator", "balance_source_classes": true,
+  "models": ["cnn", "lstm", "resnet1d", "transformer", "proposed"],
+  "seed": 42, "batch_size": 64, "max_epochs": 50, "learning_rate": 0.001,
+  "weight_decay": 0.0, "scheduler": "step10_gamma0.1", "early_stopping_patience": 10
+}

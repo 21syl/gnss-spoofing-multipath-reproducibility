@@ -1,0 +1,9 @@
+{
+  "experiment": "texbat_ds245_to_ds3678", "protocol": "independent_record_transfer",
+  "source_records": ["ds2", "ds4", "ds5"], "target_records": ["ds3", "ds6", "ds7", "ds8"],
+  "correlators": 11, "classes": 2, "split_ratios": [0.8, 0.2],
+  "normalization": "train_zscore_per_correlator", "balance_source_classes": true,
+  "models": ["cnn", "lstm", "resnet1d", "transformer", "proposed"],
+  "seed": 42, "batch_size": 64, "max_epochs": 50, "learning_rate": 0.001,
+  "weight_decay": 0.0, "scheduler": "step10_gamma0.1", "early_stopping_patience": 10
+}

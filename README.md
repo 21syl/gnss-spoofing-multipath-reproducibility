@@ -1,35 +1,97 @@
-# Robust GNSS Spoofing Detection Under Multipath Interference
+# GNSS spoofing detection under multipath interference
 
-Reproducibility package for the manuscript "Robust GNSS spoofing detection under multipath interference: a multi-correlator Transformer-LSTM approach".
+Latest code for **Robust GNSS spoofing detection under multipath interference:
+a multi-correlator Transformer-LSTM approach**.
 
-> **Demo repository scaffold.** The current files contain placeholders only. They must not be cited as released experimental data, executable research code, or reproduced results until the authors replace every `DEMO`, `PLACEHOLDER`, and `TODO` item.
+MATLAB correlator export, five neural-network models, configurable training and
+evaluation, SQM/DWT-fuzzy implementations, and result plotting are provided.
+See [implementation details](docs/IMPLEMENTATION.md) for architecture choices,
+split protocols, time alignment and metric definitions.
 
-## Planned contents
+## Data availability
 
-- `configs/`: versioned experiment configurations for the self-collected BDS B1I data and TEXBAT GPS L1 data.
-- `data/`: dataset documentation, metadata dictionaries, checksums, and fixed record-level split manifests. Large data files are intentionally excluded from Git.
-- `src/`: model, baseline, preprocessing, training, and evaluation source code.
-- `scripts/`: one-command training, evaluation, and figure/table reproduction entry points.
-- `results/`: machine-readable metrics, figure source data, tables, and logs.
-- `docs/`: dataset card, availability statements, repository map, and release checklist.
-- `third_party/TEXBAT/`: official access instructions and local preprocessing notes. TEXBAT recordings must not be redistributed unless their licence permits it.
+Self-collected raw/processed recordings and trained checkpoints are **not bundled**.
+No public self-collected-data download is currently provided. The configuration
+files describe their format and experimental parameters; they are not substitutes
+for recordings. Runs require locally available receiver outputs.
 
-## Intended reproducibility workflow
+TEXBAT is available from the [UT Austin Radionavigation Laboratory](https://radionavlab.ae.utexas.edu/texbat/)
+and its [data store](https://rnl-data.ae.utexas.edu/datastore/texbat/).
+Download it from the provider; this repository does not redistribute it. The
+exporter consumes processed 81-correlator `trackData` MAT files, not raw TEXBAT IQ.
+Receiver processing must first produce the documented interface.
 
-1. Obtain the self-collected dataset from the permanent repository listed in `docs/DATA_AVAILABILITY_DEMO.md`.
-2. Obtain TEXBAT from its official source, then follow `third_party/TEXBAT/README.md`.
-3. Create the software environment using `environment/environment.yml`.
-4. Validate file integrity with `data/checksums/SHA256SUMS.demo.txt`.
-5. Use the frozen manifests in `data/splits/` to prevent recording-window leakage.
-6. Run the training and evaluation commands documented in `scripts/README.md`.
-7. Regenerate paper figures and tables from machine-readable result files.
+## Quick start
 
-## Repository status
+Use Python 3.10+ and a suitable CPU/CUDA PyTorch build.
+Install dependencies with `python -m pip install -r requirements.txt`.
+MATLAB is required for MAT export and supplied plotting/baseline scripts.
 
-- Code: demo placeholders
-- Self-collected data: not deposited
-- TEXBAT: not redistributed
-- Fixed split manifests: demo rows only
-- Archived release DOI: not assigned
+1. From the repository root, copy and edit a `configs/data/*.example.json` file
+   to point at your receiver outputs. Keep private settings outside Git.
+2. Export raw epochs in MATLAB:
 
-See `docs/UPDATE_GUIDE_ZH.md` for the Chinese update workflow.
+```matlab
+addpath('matlab');
+export_correlator_records('configs/data/mixed_records.example.json');
+```
+
+3. Train/evaluate from the repository root:
+
+```sh
+python scripts/run_experiment.py --config configs/experiments/mixed_static_to_dynamic.json --data-dir data/processed/mixed
+python scripts/run_experiment.py --config configs/experiments/mixed_dynamic_to_static.json --data-dir data/processed/mixed
+```
+
+Other configurations cover pairwise static/dynamic, TEXBAT within-record and
+configurable TEXBAT transfer. Edit source/target IDs in JSON, not code.
+Use `--dry-run` to validate data/splits or `--models cnn lstm` for a subset.
+Output directories are timestamped and do not overwrite previous runs.
+
+4. Plot two transfer runs with their actual output paths:
+
+```matlab
+addpath('matlab');
+plot_prediction_timelines({runA,runB},{'bs6','bs7'},'outputs/figures');
+```
+
+For SQM/fuzzy, add `matlab/baselines` and call either function with a configuration
+struct containing local paths and record-specific settings. Feature visualizations
+and metric exports are retained. Read the implementation guide before selecting
+calibration intervals or comparing presets.
+
+## Configuration and outputs
+
+* `configs/data/dataset_parameters.json`: signal parameters, record identities,
+  labels, correlator layout, references and public dataset links.
+* `configs/data/*.example.json`: explicit file/channel/time-offset mappings.
+  Unconfirmed pairwise/TEXBAT mappings are empty and must be supplied before
+  export; no event alignment is guessed.
+* `configs/experiments/*.json`: seeds, normalization, splits and hyperparameters.
+* `src/gnss/`: models, preprocessing, trainer and metrics.
+* `matlab/`: raw-epoch export and plots; `matlab/baselines/`: SQM and fuzzy copies.
+* `outputs/<run>/`: input hashes, full split manifest, sample counts, fitted
+  preprocessing, configuration, environment, architectures, checkpoints,
+  training histories, per-window predictions and stage/overall metrics.
+
+Normalization statistics are fitted on selected training windows only.
+Targets never select checkpoints. Mixed-target min-max values may exceed [0,1]
+because source scaling is retained without clipping.
+
+## Tests
+
+```sh
+python -m unittest discover -s tests -p test_research.py -v
+python scripts/smoke_test.py
+```
+
+The smoke test uses explicitly synthetic inputs to check execution, not to produce
+detection results. Real numerical results require the actual recordings.
+Files labelled `demo` remain legacy scaffold examples and are not research evidence.
+
+## Version and reuse
+
+This is the latest code version. Record the Git commit with each run.
+See [CHANGELOG](CHANGELOG.md). No open-source licence has yet been granted;
+see `LICENSE-CODE.txt`. Public source access does not grant third-party data rights.
+Not all manuscript diagrams/layouts are regenerated by the supplied plotting tools.

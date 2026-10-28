@@ -1,11 +1,9 @@
 cff-version: 1.2.0
-message: "DEMO PLACEHOLDER: replace author and release metadata before citation."
-title: "Robust GNSS Spoofing Detection Under Multipath Interference: Reproducibility Package"
+message: "Please cite this repository URL and the exact commit used."
+title: "GNSS spoofing detection under multipath interference code"
 type: software
-version: 0.0.0-demo
-date-released: 2026-08-25
+version: 0.2.0
+date-released: 2026-10-28
 authors:
-  - family-names: "AUTHOR_FAMILY_NAME"
-    given-names: "AUTHOR_GIVEN_NAME"
-repository-code: "REPLACE_WITH_GITHUB_URL"
-abstract: "Demo repository scaffold. No research data or validated results are released in this version."
+  - name: "21syl"
+repository-code: "https://github.com/21syl/gnss-spoofing-multipath-reproducibility"

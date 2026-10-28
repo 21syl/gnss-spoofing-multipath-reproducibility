@@ -1,0 +1,9 @@
+{
+  "experiment": "static_to_dynamic_multipathfirst", "protocol": "independent_record_transfer",
+  "source_records": ["bs5"], "target_records": ["bs6"],
+  "correlators": 11, "classes": 3, "split_ratios": [0.7, 0.15, 0.15],
+  "normalization": "train_global_minmax", "balance_source_classes": false,
+  "models": ["cnn", "lstm", "resnet1d", "transformer", "proposed"],
+  "seed": 42, "batch_size": 32, "max_epochs": 10, "learning_rate": 0.001,
+  "weight_decay": 0.0, "scheduler": "none", "early_stopping_patience": 10
+}
