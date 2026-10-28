@@ -1,9 +1,0 @@
-status: DEMO_PLACEHOLDER
-experiment_name: texbat_gps_l1_demo
-random_seed: 42
-signal: GPS_L1
-dataset_source: REPLACE_WITH_OFFICIAL_TEXBAT_SOURCE
-scenarios: [ds2, ds3, ds4, ds5, ds6, ds7, ds8]
-correlator_count: 11
-split_manifest: data/splits/texbat_scenario_split_demo.csv
-TODO: replace with the final cross-scenario or record-independent evaluation protocol

@@ -1,5 +1,0 @@
-field_name,definition,unit,allowed_values,missing_value_code,status
-correlator_output_i,I-branch coherent correlator output,arbitrary_unit,numeric,NA,DEMO_ONLY
-code_offset,correlator code phase offset,chips,"[-2,2]",NA,DEMO_ONLY
-class_label,three-class target label,none,"authentic|spoofing|multipath",NA,DEMO_ONLY
-record_id,continuous acquisition record identifier,none,string,NA,DEMO_ONLY

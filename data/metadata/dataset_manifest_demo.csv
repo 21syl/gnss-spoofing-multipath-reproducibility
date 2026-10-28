@@ -1,4 +1,0 @@
-dataset_id,record_id,scenario_id,platform_state,signal,prn,class_label,start_time_s,end_time_s,source_file,processing_version,status
-DEMO_BDS,DEMO_RECORD_001,DEMO_SCENARIO_STATIC,static,BDS_B1I,DEMO_PRN,authentic,0.0,1.0,DEMO_FILE.npy,0.0.0-demo,DEMO_ONLY
-DEMO_BDS,DEMO_RECORD_002,DEMO_SCENARIO_DYNAMIC,dynamic,BDS_B1I,DEMO_PRN,spoofing,0.0,1.0,DEMO_FILE.npy,0.0.0-demo,DEMO_ONLY
-DEMO_BDS,DEMO_RECORD_003,DEMO_SCENARIO_MULTIPATH,static,BDS_B1I,DEMO_PRN,multipath,0.0,1.0,DEMO_FILE.npy,0.0.0-demo,DEMO_ONLY

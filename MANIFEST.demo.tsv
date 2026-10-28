@@ -1,8 +1,0 @@
-path	status	purpose
-README.md	DEMO	repository overview
-configs/	DEMO	experiment configurations
-data/	DEMO	metadata, splits, checksums, and data documentation
-src/	DEMO	research code placeholders
-scripts/	DEMO	reproduction entry points
-results/	DEMO	machine-readable output placeholders
-docs/	DEMO	availability and reproducibility documentation

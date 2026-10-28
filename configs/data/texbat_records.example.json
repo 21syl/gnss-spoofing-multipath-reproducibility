@@ -1,7 +1,0 @@
-{
-  "output_dir": "data/processed/texbat", "correlators": 11,
-  "note": "Duplicate this record entry for ds3-ds8. Set the actual receiver system name, tracking channel, available duration, original-time offset and attack time from the tracking export. Raw TEXBAT .bin is not a MAT input. Do not guess attack onset from another receiver's time axis.",
-  "records": [
-    {"id": "ds2", "mat_file": null, "system": "gpsl1", "channel": null, "processed_start_original_s": null, "duration_s": null, "multipath_entry_original_s": null, "spoofing_entry_original_s": null, "time_reference": "original_TEXBAT_recording"}
-  ]
-}

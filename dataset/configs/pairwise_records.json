@@ -1,0 +1,51 @@
+{
+  "output_dir": "dataset/processed/pairwise",
+  "correlators": 11,
+  "note": "Configure local MAT paths, tracking channels, processed durations and original start times. The event is at original signal time 100 s.",
+  "records": [
+    {
+      "id": "bs1",
+      "mat_file": null,
+      "system": "beib1",
+      "channel": null,
+      "processed_start_original_s": null,
+      "duration_s": null,
+      "multipath_entry_original_s": null,
+      "spoofing_entry_original_s": 100,
+      "time_reference": "original_generated_signal"
+    },
+    {
+      "id": "bs2",
+      "mat_file": null,
+      "system": "beib1",
+      "channel": null,
+      "processed_start_original_s": null,
+      "duration_s": null,
+      "multipath_entry_original_s": null,
+      "spoofing_entry_original_s": 100,
+      "time_reference": "original_generated_signal"
+    },
+    {
+      "id": "bs3",
+      "mat_file": null,
+      "system": "beib1",
+      "channel": null,
+      "processed_start_original_s": null,
+      "duration_s": null,
+      "multipath_entry_original_s": 100,
+      "spoofing_entry_original_s": null,
+      "time_reference": "original_generated_signal"
+    },
+    {
+      "id": "bs4",
+      "mat_file": null,
+      "system": "beib1",
+      "channel": null,
+      "processed_start_original_s": null,
+      "duration_s": null,
+      "multipath_entry_original_s": 100,
+      "spoofing_entry_original_s": null,
+      "time_reference": "original_generated_signal"
+    }
+  ]
+}

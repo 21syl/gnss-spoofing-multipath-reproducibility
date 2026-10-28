@@ -1,9 +1,0 @@
-# DEMO PLACEHOLDER: export exact package versions from the verified environment.
-numpy
-pandas
-scipy
-scikit-learn
-matplotlib
-PyYAML
-torch
-pytest

@@ -1,9 +1,0 @@
-cff-version: 1.2.0
-message: "Please cite this repository URL and the exact commit used."
-title: "GNSS spoofing detection under multipath interference code"
-type: software
-version: 0.2.0
-date-released: 2026-10-28
-authors:
-  - name: "21syl"
-repository-code: "https://github.com/21syl/gnss-spoofing-multipath-reproducibility"

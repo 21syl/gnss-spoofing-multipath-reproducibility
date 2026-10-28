@@ -1,3 +1,0 @@
-# DEMO PLACEHOLDER
-# Add one line per released file in the form:
-# <sha256>  <relative/path/to/file>

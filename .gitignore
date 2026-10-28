@@ -1,33 +1,21 @@
-# Large or generated research artifacts
-data/raw/*
-data/processed/*
-results/figures/*
-results/logs/*
-checkpoints/
+# Generated data and results
 outputs/
+dataset/raw/
+dataset/processed/
+checkpoints/
+**/results_*/
 
-# Preserve directory structure
-!data/raw/.gitkeep
-!data/processed/.gitkeep
-!results/figures/.gitkeep
-!results/logs/.gitkeep
-
-# Python
+# Python and local configuration
 __pycache__/
 *.py[cod]
-.pytest_cache/
 .venv/
 venv/
+local_config.*
+.env
 
-# Editors and operating systems
+# Editors and temporary files
 .idea/
 .vscode/
 .DS_Store
 Thumbs.db
 ~$*
-
-# Secrets and local settings
-.env
-*.key
-*.pem
-local_config.*

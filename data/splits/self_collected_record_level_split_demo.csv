@@ -1,4 +1,0 @@
-record_id,subset,grouping_unit,status
-DEMO_RECORD_001,train,record,DEMO_ONLY
-DEMO_RECORD_002,validation,record,DEMO_ONLY
-DEMO_RECORD_003,test,record,DEMO_ONLY

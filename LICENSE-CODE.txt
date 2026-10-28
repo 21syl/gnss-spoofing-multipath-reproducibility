@@ -1,4 +1,0 @@
-Copyright remains with the respective code owners.
-No open-source licence is granted by this release. Public availability of source
-does not itself grant permission for redistribution or derivative use.
-Contact the repository owner for permission beyond rights otherwise applicable.

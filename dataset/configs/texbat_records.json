@@ -1,0 +1,18 @@
+{
+  "output_dir": "dataset/processed/texbat",
+  "correlators": 11,
+  "note": "Configure one record entry per TEXBAT scenario with the MAT path, system, tracking channel, processed duration, original start time and event time.",
+  "records": [
+    {
+      "id": "ds2",
+      "mat_file": null,
+      "system": "gpsl1",
+      "channel": null,
+      "processed_start_original_s": null,
+      "duration_s": null,
+      "multipath_entry_original_s": null,
+      "spoofing_entry_original_s": null,
+      "time_reference": "original_TEXBAT_recording"
+    }
+  ]
+}

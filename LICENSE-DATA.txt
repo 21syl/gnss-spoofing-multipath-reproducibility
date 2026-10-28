@@ -1,3 +1,0 @@
-No self-collected dataset is distributed and no data licence is granted.
-Third-party data remain subject to their providers' terms. Obtain TEXBAT from
-the official provider; this repository does not grant redistribution rights.
