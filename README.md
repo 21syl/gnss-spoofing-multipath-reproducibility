@@ -3,6 +3,9 @@
 Code and experimental dataset information for **Robust GNSS spoofing detection
 under multipath interference: a multi-correlator Transformer-LSTM approach**.
 
+**Publication status:** The associated manuscript is currently under peer review
+and has not yet been accepted for publication.
+
 The repository contains the proposed model, CNN, ResNet1D, LSTM, Transformer,
 sliding Delta, WSCM and DWT-fuzzy, together with data processing, training,
 evaluation and plotting code.
