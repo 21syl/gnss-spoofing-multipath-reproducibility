@@ -224,8 +224,7 @@ cfg = struct();
 %
 % cfg.spoofWindowSec = 0.5;
 % cfg.multipathWindowSec = 0.2;
-% % Causal smoothing is appropriate for online detection.  Set to 'centered'
-% % only when reproducing the legacy offline centered-window curves.
+% % Smoothing modes: 'causal' uses preceding samples; 'centered' uses both sides.
 % cfg.smoothingMode = 'causal';
 % cfg.sigmaMultiplier = 3;
 % cfg.minimumThresholdSamples = 20;
@@ -282,8 +281,7 @@ cfg.wscmOffsetsChips = [0.4 0.6 0.8 1.2 1.5];
 
 cfg.spoofWindowSec = 0.5;
 cfg.multipathWindowSec = 0.2;
-% Causal smoothing is appropriate for online detection.  Set to 'centered'
-% only when reproducing the legacy offline centered-window curves.
+% Smoothing modes: 'causal' uses preceding samples; 'centered' uses both sides.
 cfg.smoothingMode = 'causal';
 cfg.sigmaMultiplier = 3;
 cfg.minimumThresholdSamples = 20;

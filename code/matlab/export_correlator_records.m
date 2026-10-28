@@ -8,7 +8,6 @@ function manifest = export_correlator_records(configFile)
 % SELECTED epoch. read_start_epoch (optional, default 1) selects that epoch
 % within trackData.
 % Mixed-record event times are relative to the first tracking epoch instead.
-% Adapted from data_generate_mixed_order_transfer_20261020.m.
 
     cfg = jsondecode(fileread(configFile));
     validateattributes(cfg.correlators, {'numeric'}, ...
@@ -46,7 +45,7 @@ function row=exportOne(cfg,r)
     end
     validateattributes(first,{'numeric'},{'scalar','integer','positive'});
     base=['/trackData/' r.system '/channel'];
-    % Preserve the original selective v7.3 reader, with a v7 fallback.
+    % Selectively read v7.3 fields; use load for v7 MAT files.
     isHdf=true;
     try
         info=h5info(r.mat_file,base);

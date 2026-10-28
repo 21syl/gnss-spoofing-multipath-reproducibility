@@ -1,4 +1,4 @@
-"""Window-level and physical-state metrics adapted from the transfer experiment."""
+"""Classification metrics for complete recordings and physical signal stages."""
 import numpy as np
 from sklearn.metrics import accuracy_score, precision_recall_fscore_support, roc_auc_score
 
@@ -14,7 +14,7 @@ def summarize(y, probability, state):
     def rate(mask):
         return float(alarm[mask].mean()) if np.any(mask) else None
 
-    # Missing-class macro AUC is explicitly scoped, never silently called full macro AUC.
+    # Compute present-class and all-class macro AUC with separate output fields.
     auc = float(np.mean([roc_auc_score(y == c, probability[:, c]) for c in support])) if len(support) > 1 else None
     return {"samples": len(y), "accuracy": float(accuracy_score(y, prediction)),
             "macro_precision": float(precision), "macro_recall": float(recall),

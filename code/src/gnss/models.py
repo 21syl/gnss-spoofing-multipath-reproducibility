@@ -109,7 +109,6 @@ class Transformer(nn.Module):
 class Proposed(nn.Module):
     """Spatial encoding, multiscale branches, two-layer BiLSTM and self-attention.
 
-    Adapted from FullLSTM in train_mixed_order_transfer_20261020.py.
     Feature channels are mixed by the 1x1 convolution; Conv1D kernels operate
     along time. The second encoding kernel is 3, as specified in Section IV.
     """
